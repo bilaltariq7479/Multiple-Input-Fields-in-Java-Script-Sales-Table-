@@ -40,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Dynamic Form</title>
 </head>
 <body>
-    
+    <!-- <h1 id="total_bill">Total Bill: 0</h1> -->
     <form method="post" action="">
         <div id="input_fields">
-
+            <label>Total Bill:</label> <input type="text" id="total_bill_input" readonly>
             <div>
                 <label>Customer_id</label>
                 <input type="text" name="username[]" required>
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             totalAmountInputs.forEach(function(input) {
                 totalBill += parseFloat(input.value) || 0;
             });
-            document.getElementById('total_bill').textContent = 'Total Bill: ' + totalBill;
+            document.getElementById('total_bill_input').value = totalBill;
         }
     </script>
 
